@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>登录页面</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/jquery.1.11.1.min.js">
+      function validatePhoneNumber() {
+                var phoneNumber = document.getElementById('phone-number').value;
+                var phoneRegex = /^[0-9]{11}$/;
+
+                if (phoneRegex.test(phoneNumber)) {
+                  // 手机号码正确时，调用登录函数
+                  showSuccessAlert();
+                } else {
+                  // 手机号码不正确时，弹出错误提示
+                  alert('请输入正确的手机号码');
+                  // 或者你可以重定向到错误提示页面
+                  // window.location.href = 'error_page.html';
+                }
+              }
+
+              function showSuccessAlert() {
+                alert('登录成功');
+              }
+    </script>
+    <style></style>
+  </head>
+  <body>
+    <div class="register_head_on"></div>
+    <div class="register_head">
+      <a href="index.html"><img src="img/logo.jpg" alt="" /></a>
+      <div class="register_head_right">
+        <p class="register_head_right_p1">小 米 商 城</p>
+        <p class="register_head_right_p2">让每个人都享受科技乐趣</p>
+      </div>
+    </div>
+
+    <div class="register">
+      <div class="register_boby">
+        <div class="register_boby_min">
+          <div class="register_boby_no1">
+            <div class="register_boby_no1_in">
+              <span style="color: #ff6700">账号登录 </span>
+              <span class="register_boby_sapn"> | </span>
+              <span> 扫码登录</span>
+            </div>
+          </div>
+
+          <div class="register_boby_no2">
+            <input
+              id="phone-number"
+              class="sign-new-input"
+              type="text"
+              placeholder="手机号码"
+            />
+            <input type="password" placeholder="密码" />
+            <div class="register_boby_no2_div">
+              <button onclick="validatePhoneNumber()">登录</button>
+            </div>
+          </div>
+          <!-- <div class="register_boby_no2">
+            <input class="sign-new-input" type="text" placeholder="手机号码" />
+            <input type="password" placeholder="密码" />
+            <div class="register_boby_no2_div">
+              <button onclick="showSuccessAlert()">登录</button>
+            </div> -->
+          <div class="register_boby_no3">
+            <a href="sms_login.html" style="color: #ff6700">手机短信登录</a>
+            <sapn class="register_boby_no3_span">
+              <a href="register.html">立即注册</a>
+              <span>|</span>
+              <a href="avascript:void(0);">忘记密码?</a>
+            </sapn>
+          </div>
+          <div class="register_boby_no4">
+            <img src="img/register02.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="register_foot">
+      <img src="img/register03.jpg" alt="" />
+    </div>
+  </body>
+</html>

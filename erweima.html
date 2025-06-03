@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小米购物车</title>
+    <style>
+      .tro_close_bot {
+        text-align: center;
+        font-size: 30px;
+      }
+      /* 二维码容器样式 */
+      .qr-code-container {
+        display: none; /* 默认隐藏 */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      }
+
+      /* 支付成功提示样式 */
+      .payment-success {
+        display: none; /* 默认隐藏 */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 1001;
+      }
+      .tro_close_p_r {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tro_close_bot">
+      <p class="tro_close_p">
+        确定购物 | 共<span>2</span>件,已选择了<span>2</span>件<span
+          style="color: #ff6700"
+        ></span>
+      </p>
+      <!-- 去结算按钮 -->
+      <a class="tro_close_p_r" href="#" id="goCheckout">去结算</a>
+      <p class="tro_close_p_c">合计:<span id="close">1998</span>元</p>
+      <!-- 二维码容器 -->
+      <div class="qr-code-container" id="qrCodeContainer">
+        <img src="./img/aaaa.jpg" alt="支付二维码" class="qr-code" />
+        <p>请使用您的支付工具扫描此二维码完成支付</p>
+      </div>
+      <!-- 支付成功提示 -->
+      <div class="payment-success" id="paymentSuccess">
+        <p>支付成功！</p>
+      </div>
+    </div>
+
+    <script>
+      // 获取“去结算”按钮、二维码容器和支付成功提示容器
+      const goCheckoutBtn = document.getElementById("goCheckout");
+      const qrCodeContainer = document.getElementById("qrCodeContainer");
+      const paymentSuccess = document.getElementById("paymentSuccess");
+
+      // 添加点击事件监听器
+      goCheckoutBtn.addEventListener("click", function (event) {
+        event.preventDefault(); // 阻止默认的链接跳转行为
+
+        // 显示二维码
+        qrCodeContainer.style.display = "block";
+
+        // 模拟扫描二维码并支付成功的过程
+        // 在实际应用中，这里应该是调用支付API并等待支付结果
+        setTimeout(function () {
+          // 隐藏二维码
+          qrCodeContainer.style.display = "none";
+          // 显示支付成功提示
+          paymentSuccess.style.display = "block";
+
+          // 模拟支付成功后的操作，比如1秒后返回结算页面
+          setTimeout(function () {
+            paymentSuccess.style.display = "none";
+            // 返回结算页面
+            window.location.href = "index.html";
+          }, 1000);
+        }, 3000); // 假设3秒后扫描成功
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>注册页面</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <script>
+      function showSuccessAlert() {
+        var phoneNumberInput = document.querySelector("input.sign_no5_div2");
+        var phoneNumber = phoneNumberInput.value.trim();
+        var phonePattern = /^1[3-9]\d{9}$/; // 中国手机号码的正则表达式
+
+        if (phoneNumber === "") {
+          alert("请先输入手机号码");
+        } else if (!phonePattern.test(phoneNumber)) {
+          alert("手机号码格式不正确");
+        } else {
+          alert("立即注册成功");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="sign_background">
+      <div class="sign_background_in">
+        <div class="sign_background_no1">
+          <a href="index.html"><img src="img/logo.jpg" alt="" /></a>
+        </div>
+        <div class="sign_background_no2">注册小米帐号</div>
+        <div class="sign_background_no3">
+          <h4>国家/地区</h4>
+          <div class="sign_background_no4">
+            <select>
+              <!--<option value=""><input type="text"></option>-->
+              <option>中国</option>
+              <option>常用</option>
+              <option>中国台湾</option>
+              <option>中国香港</option>
+            </select>
+            <div class="sign_background_no4_in">
+              <div>∨</div>
+            </div>
+          </div>
+          <p>成功注册帐号后，国家/地区将不能被修改</p>
+          <p style="font-size: 18px">手机号码</p>
+          <div class="sign_background_no5">
+            <div class="sign_no5_div1">
+              <select>
+                <option>+86</option>
+                <option>常用</option>
+                <option>中国</option>
+                <option>中国台湾</option>
+                <option>中国香港</option>
+              </select>
+            </div>
+            <input
+              class="sign_no5_div2"
+              type="text"
+              placeholder="请输入手机号码"
+            />
+          </div>
+          <!-- <div class="sign_background_no6">立即注册</div> -->
+          <button onclick="showSuccessAlert()" class="sign_background_no6">
+            立即注册
+          </button>
+        </div>
+        <div class="sign_background_no7">
+          注册帐号即表示您同意并愿意遵守小米 <span>用户协议</span>和<span
+            >隐私政策</span
+          >
+        </div>
+      </div>
+      <div class="sign_background_no8"><img src="img/sign01.jpg" alt="" /></div>
+    </div>
+  </body>
+</html>

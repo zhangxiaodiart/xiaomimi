@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户注册</title>
+		<link rel="stylesheet" href="css/userRegister.css" />
+		<!--1、首先：引入jQuery的js文件-->
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<!--2、外链式：再引入自己写的js文件-->
+		<script src="js/userRegister.js"></script>
+		<!--<script>
+			function aaa()
+			{}
+			
+		</script>-->
+	</head>
+
+	<body>
+		<div class="left"></div>
+		<div class="content">
+			<div class="line">
+				<img src="img/logo.jpg" alt="" id="logo" name="logo" />
+			</div>
+			<div class="line">
+				<h1>注册小米帐号</h1>
+			</div>
+			<div class="line">
+				<div class="line_left">
+					<label for="cname">用户名称</label>
+				</div>
+				<div class="line_right">
+					<input type="text" name="cname" id="cname" placeholder="输入用户名称" 
+						 />
+					<!--onblur事件：文本框失去焦点-->
+				</div>
+			</div>
+			<div class="line">
+				<div class="line_left">
+					<label for="cpassword">密码</label>
+				</div>
+				<div class="line_right">
+					<input type="password" name="cpassword" id="cpassword" placeholder="输入用户密码"
+						 />
+				</div>
+			</div>
+			<div class="line">
+				<div class="line_left">
+					<label for="cpassword2">确认密码</label>
+				</div>
+				<div class="line_right">
+					<input type="password" name="cpassword2" id="cpassword2" placeholder="输入确认密码" 
+						/>
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+			<div class="line">
+				<div class="line_left">
+					<label for="province">配送地址</label>
+				</div>
+				<div class="line_peisong">
+					<select name="province" id="province" onchange="jiaZaiCity()">
+						<option value="1">北京</option>
+						<option value="2">四川</option>
+						<option value="1">广东</option>
+					</select>
+				</div>
+				<div class="line_peisong">
+					<select name="city" id="city">
+						<option value="1">海淀</option>
+						<option value="2">东城</option>
+						<option value="1">西城</option>
+					</select>
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+			<div class="line">
+				<div class="line_left">
+					<label for="hobby1">个人爱好</label>
+				</div>
+				<div class="line_peisong">
+					<!--<select name="hobby1" id="hobby1" multiple="multiple" size="3" class="select_height"
+						ondblclick="selectHobby()">-->
+					<select name="hobby1" id="hobby1" multiple="multiple" size="3" class="select_height"
+						>
+						<option value="1">唱歌</option>
+						<option value="2">跳舞</option>
+						<option value="1">读书</option>
+					</select>
+				</div>
+				<div class="line_peisong">
+					<select name="hobby2" id="hobby2" class="select_height" multiple="multiple" size="3">
+					</select>
+				</div>
+			</div>
+			<div class="line">
+				<div class="line_left">
+					<label for="sex">性别</label>
+				</div>
+				<div class="line_right radio_left">
+					<input type="radio" name="sex" id="sex" value="0" />男
+					<input type="radio" name="sex" id="sex" value="1" />女
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+			<div class="line">
+				<div class="line_left">
+					<label for="peisongDate">配送时间</label>
+				</div>
+				<div class="line_right radio_left">
+					<input type="checkbox" name="peisongDate" id="peisongDate" value="0" alt="1"/>周末
+					<input type="checkbox" name="peisongDate" id="peisongDate" value="1" alt="1"/>节假日
+					<input type="checkbox" name="peisongDate" id="peisongDate" value="2" alt="1"/>工作日
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+			<div class="line">
+				<div class="line_left">
+					<label for="protocol">同意协议</label>
+				</div>
+				<div class="line_right radio_left">
+					<input type="checkbox" name="protocol" id="protocol" value="1" alt="0"
+						onclick="chkValue()"/>
+				</div>
+			</div>
+			<div class="line">
+				<h5 id="msg" name="msg">验证结果</h5>
+			</div>
+			<div class="line">
+				<input type="submit" id="btn_zhuce" name="btn_zhuce" class="button_zhuce" value="注      册" 
+					onclick="zhuce()"/>
+			</div>
+		</div>
+		<div class="left"></div>
+	</body>
+
+</html>

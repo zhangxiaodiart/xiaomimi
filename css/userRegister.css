@@ -1,0 +1,93 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+.left{
+	width: 15%;
+	background-color: whitesmoke;
+	height: 966px;
+	float: left;
+}
+.content{
+	width: 70%;
+	background-color: white;
+	float: left;
+}
+/*后代选择器*/
+.content .line{
+	width: 90%;
+	margin-left: 5%;
+	text-align: center;
+	margin-top: 10px;
+}
+.content .line h1{
+	font-weight: 400;
+}
+.content .line .line_left{
+	width: 10%;
+	float: left;
+	padding-top: 10px;
+	text-align: right;
+}
+.content .line .line_right{
+	width: 90%;
+	float: left;
+	padding-top: 10px;
+}
+.content .line .line_left label{
+	height: 30px;
+	line-height: 30px;
+	font-weight: 700;
+}
+/*属性选择器   并集选择器*/
+.content .line .line_right input[type=text], .content .line .line_right input[type=password]
+,.content .line .line_right input[type=number], .content .line .line_right input[type=date]
+,.content .line .line_right input[type=email]{
+	width: 90%;
+	height: 30px;
+	border: solid 1px skyblue;
+	border-radius: 3px;
+}
+.content .line .line_peisong{
+	width: 45%;
+	float: left;
+	padding-top: 10px;
+}
+.content .line .line_peisong select{
+	width: 80%;
+	height: 30px;
+	border: solid 1px skyblue;
+	border-radius: 3px;
+}
+.content .line .line_peisong .select_height{
+	height: 60px;
+}
+/*ID选择器*/
+/*.content .line .line_peisong #hobby1, .content .line .line_peisong #hobby2{
+	height: 60px;
+}*/
+.content .line .line_right input[type=radio], .content .line .line_right input[type=checkbox]
+{
+	width: 15%;
+	height: 15px;
+	margin-top: 10px;
+}
+.radio_left{
+	text-align: left;
+}
+.button_zhuce{
+	width: 200px;
+	height: 50px;
+	background-color: #87CEEB;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 1.2em;
+	margin-top: 30px;
+}
+h5{
+	color: red;
+	display: none;
+	/*display: block;*/
+}
